@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Climate Crisis', cursive; */
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 25px 12.5%;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: transparent;
+    display: flex;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: url('bg.png') no-repeat; */
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    
+    /* z-index: -1; */
+}
+
+.navbar a {
+    color: #060505;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 8px 15px;
+    position: relative;
+    transition: 0.5s;
+    font-family: "Neue Frutiger World", Tahoma, sans-serif;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #f54308;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 0.5s;
+
+}
+
+.navbar a:hover::after {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.seacrch-bar {
+    width: 250px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #0c0b0b;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: none;
+}
+
+.seacrch-bar input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #f8f2f2;
+    padding: 0 10px;
+}
+
+.seacrch-bar input::placeholder {
+    color: #0f0e0e;
+    padding-left: 20px;
+}
+
+.seacrch-bar button {
+    width: 45px;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: none;
+    outline: none;
+    border: none;
+}
+
+.seacrch-bar button i {
+    color: #0c0b0b;
+    font-size: 20px;
+}
+
+
+.container {
+    position: absolute;
+    width: 75%;
+    height: 550px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url('img/sunset.jpg') no-repeat;
+    /* background-color: #f50808; */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+}
+
+.container .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    /* background: #f50808; */
+    padding: 80px;
+    color: #e7dede;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.content img {
+    width: 150px;
+    height: 150px;
+    /* border-radius: 50% 50% 50% 50%; */
+    /* border hình vuông */
+    border-radius: 50%;
+
+    border: 2px solid #f3f3f3;
+    
+}
+
+.container .login-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    /* background: #d0e413; */
+    display: flex;
+}
+
+.content .logo {
+    font-size: 30px;
+}
+
+.text-sci h2 {
+    font-size: 40px;
+    line-height: 1;
+}
+
+.text-sci span {
+    font-size: 25px;
+}
+
+.text-sci p {
+    font-size: 16px;
+    margin-top: 20px !important;
+    padding: 20px 0;
+}
+
+.social-icons a i {
+    font-size: 25px;
+    padding-top: 20px;
+    color: #f3f3f3;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+
+.social-icons a i:hover {
+    transform: scale(1.2);
+}
+
+.login-box .form-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #f4ebeb;
+}
+
+.form-box h2 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.form-box .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #000000;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+    left: 0;
+    color: #000000;
+    font-size: 12px;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 20px;
+}
+
+.remember-forgot {
+    font-size: 14.5px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+    accent-color: #000000;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #000000;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: #c4103d;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #f53f3f;
+}
+
+.signup {
+    font-size: 14.5px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 700;
+
+}
+
+.signup a {
+    color: #ee0d0d;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+
+/* write responsive */
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        width: 90%;
+    }
+}

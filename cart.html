@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+
+    <link rel="stylesheet" href="styleindex.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <style>
+        .cart {
+            background-color: #fff;
+            padding: 4vh 5vh;
+            border-bottom-left-radius: 1rem;
+            border-top-left-radius: 1rem;
+
+        }
+
+        .title {
+            margin-bottom: 5vh;
+        }
+
+        .card {
+            margin: auto;
+            width: 80%;
+            height: 90% auto;
+            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 1rem;
+            border: transparent;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+        }
+
+
+
+        @media(max-width:767px) {
+            .card {
+                margin: 3vh auto;
+            }
+        }
+
+        .cart {
+            background-color: #fff;
+            padding: 4vh 5vh;
+            border-bottom-left-radius: 1rem;
+            border-top-left-radius: 1rem;
+
+        }
+
+        @media(max-width:767px) {
+            .cart {
+                padding: 4vh;
+                border-bottom-left-radius: unset;
+                border-top-right-radius: 1rem;
+            }
+        }
+
+        .summary {
+            background-color: #ddd;
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            padding: 4vh;
+            color: rgb(65, 65, 65);
+        }
+
+        @media(max-width:767px) {
+            .summary {
+                border-top-right-radius: unset;
+                border-bottom-left-radius: 1rem;
+            }
+        }
+
+        .summary .col-2 {
+            padding: 0;
+        }
+
+        .summary .col-10 {
+            padding: 0;
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        .title b {
+            font-size: 1.5rem;
+        }
+
+        .main {
+            margin: 0;
+            padding: 2vh 0;
+            width: 100%;
+        }
+
+        .col-2 {
+            padding: 0 5vh;
+        }
+
+        .col {
+            margin-top: 2rem;
+            margin-left: 2rem;
+        }
+
+        .close {
+            margin-left: auto;
+            font-size: 0.7rem;
+        }
+
+        .img-fluid {
+            width: 8rem;
+            height: auto;
+        }
+
+        .back-to-shop {
+            margin-top: 4.5rem;
+        }
+
+        h5 {
+            margin-top: 4vh;
+
+        }
+
+        hr {
+            margin-top: 1.25rem;
+        }
+
+        form {
+            padding: 2vh 0;
+        }
+
+        select {
+            border: 1px solid rgba(0, 0, 0, 0.137);
+            padding: 1.5vh 1vh;
+            margin-bottom: 4vh;
+            outline: none;
+            width: 100%;
+            background-color: rgb(247, 247, 247);
+        }
+
+        input {
+            border: 1px solid rgba(0, 0, 0, 0.137);
+            padding: 1vh;
+            margin-bottom: 4vh;
+            outline: none;
+            width: 70%;
+            background-color: rgb(247, 247, 247);
+        }
+
+        input:focus::-webkit-input-placeholder {
+            color: transparent;
+        }
+
+
+
+        /* CSS */
+        .button-82-pushable {
+            position: relative;
+            border: none;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+            outline-offset: 4px;
+            transition: filter 250ms;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-82-shadow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            background: hsl(0deg 0% 0% / 0.25);
+            will-change: transform;
+            transform: translateY(2px);
+            transition:
+                transform 600ms cubic-bezier(.3, .7, .4, 1);
+        }
+
+        .button-82-edge {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            background: linear-gradient(to left,
+                    hsl(340deg 100% 16%) 0%,
+                    hsl(340deg 100% 32%) 8%,
+                    hsl(340deg 100% 32%) 92%,
+                    hsl(340deg 100% 16%) 100%);
+        }
+
+        .button-82-front {
+            display: block;
+            position: relative;
+            padding: 12px 27px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            color: white;
+            background: hsl(345deg 100% 47%);
+            will-change: transform;
+            transform: translateY(-4px);
+            transition:
+                transform 600ms cubic-bezier(.3, .7, .4, 1);
+        }
+
+        @media (min-width: 768px) {
+            .button-82-front {
+                font-size: 1.25rem;
+                padding: 12px 42px;
+            }
+        }
+
+        .button-82-pushable:hover {
+            filter: brightness(110%);
+            -webkit-filter: brightness(110%);
+        }
+
+        .button-82-pushable:hover .button-82-front {
+            transform: translateY(-6px);
+            transition:
+                transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        .button-82-pushable:active .button-82-front {
+            transform: translateY(-2px);
+            transition: transform 34ms;
+        }
+
+        .button-82-pushable:hover .button-82-shadow {
+            transform: translateY(4px);
+            transition:
+                transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        .button-82-pushable:active .button-82-shadow {
+            transform: translateY(1px);
+            transition: transform 34ms;
+        }
+
+        .button-82-pushable:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        .btn {
+            margin-top: 4vh;
+            padding: 1vh;
+            border-radius: 0;
+            margin-left: 10vh;
+        }
+
+
+        #code {
+            background-image: linear-gradient(to left, rgba(232, 152, 152, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+            background-repeat: no-repeat;
+            background-position-x: 95%;
+            background-position-y: center;
+        }
+
+        .col-md-8 {
+            width: 70%;
+            justify-content: space-between;
+        }
+
+        .col-md-4 {
+            width: 30%;
+            justify-content: space-between;
+
+        }
+
+        .col-md-4 h5 {
+            margin-left: 25%;
+            font-size: 2rem;
+            justify-content: center;
+        }
+
+
+
+
+        @media screen and (max-width: 768px) {
+            .col-md-8 {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .col-md-4 {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .col-md-8 {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .col-md-4 {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+
+
+        .fa-shopping-cart {
+            font-size: 1.5rem;
+            color: #000;
+            margin-right: 1rem;
+        }
+
+        #checkbox {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .btnTru {
+            width: 1.5rem;
+            height: 1.5rem;
+
+
+            background-color: #fff;
+            color: #000;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.5rem;
+            cursor: pointer;
+        }
+
+        .btnCong {
+            width: 1.5rem;
+            height: 1.5rem;
+
+
+            background-color: #fff;
+            color: #000;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.5rem;
+            cursor: pointer;
+        }
+
+        .btnTru:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .btnCong:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        #quantity {
+            width: 50px;
+            height: 1.5rem;
+
+            text-align: center;
+            background-color: #fff;
+            color: #000;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.5rem;
+            cursor: pointer;
+        }
+
+        .col-3 {
+            margin-top: 2rem;
+            margin-left: 2rem;
+        }
+
+        .bxs-shield-alt-2 {
+            color: #000;
+            margin-right: 0.5rem;
+        }
+
+        .price {
+            margin-top: 2.8rem;
+            margin-left: 1rem;
+            color: #131212;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+        #cars {
+            width: 70%;
+            height: 30%;
+            margin: 0 auto;
+
+        }
+
+        .align-items-center {
+            padding: 1rem;
+            border: 1px solid #d8b8b8;
+
+        }
+
+        .title-book {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d61919;
+
+        }
+
+        .cart-icon {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        .cart-icon i {
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .cart-items h5 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 50px;
+        }
+
+        .cart-items {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            width: 300px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .cart-item img {
+            width: 50px;
+            margin-left: 5px;
+        }
+
+        .cart-item-name {
+            margin: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .cart-item-price {
+            margin: 10px;
+            font-size: 14px;
+        }
+
+        .cart-items.active {
+            display: block;
+        }
+
+        .cart-icon:hover .cart-items {
+            display: block;
+        }
+
+        .fa-shopping-cart {
+            font-size: 24px;
+            color: #d51717;
+            cursor: pointer;
+        }
+
+        .fa-shopping-cart:hover {
+            color: #f00;
+        }
+
+        .btn-primary {
+            background-color: #d51717;
+            border-color: #d51717;
+        }
+
+        .btn-primary:hover {
+            background-color: #f00;
+            border-color: #f00;
+        }
+
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.5);
+        }
+
+        .btn-primary:active {
+            background-color: #f00;
+            border-color: #f00;
+        }
+
+        .Buoc1 {
+            margin-top: 2rem;
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .container-bank {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 1rem;
+
+        }
+
+        .bank {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            background: rgb(247, 247, 247);
+        }
+
+        .cart-icon {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+            margin-left: 50rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li class="active">
+                        <a href="login.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                    <li>
+                        <a href="">Store</a>
+                    </li>
+
+                </ul>
+                <div class="login-signup">
+                    <a href="">Login</a> or <a href="">Signup</a>
+                </div>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="login-signup">
+                <a href="">Login</a> or <a href="">Signup</a>
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+    </header>
+    <div class="row">
+        <div class="col-md-8 cart">
+            <div class="title">
+                <div class="row">
+                    <div class="cart-icon">
+                        <i class="fa fa-shopping-cart"></i>
+
+                        <div class="cart-items">
+                            <h5>Similar product</h5>
+                            <div class="cart-item">
+                                <img src="img/bogia.jpg
+                                " alt="Product image">
+                                <div class="cart-item-details">
+                                    <p class="cart-item-name">THE GOD FATHER</p>
+                                    <p class="cart-item-price">275.000 vnd</p>
+                                </div>
+                            </div>
+                            <div class="cart-item">
+                                <img src="img/cuontheochieugio.jpg" alt="Product image">
+                                <div class="cart-item-details">
+                                    <p class="cart-item-name">GONE WITH THE WIND</p>
+                                    <p class="cart-item-price">250.000đ</p>
+                                </div>
+                            </div>
+                            <div class="cart-item-count">
+                                <button class="btn btn-primary">ADD TO CARD</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row border-top border-bottom">
+                <div class="row main align-items-center">
+                    <input type="checkbox" name="" id="checkbox">
+                    <div class="col-2"><img class="img-fluid" src="img/hsp.png"></div>
+                    <div class="col">
+                        <h2 class="title-book">KANE & ABEL ( FIRST RESULT )</h2>
+                        <div class="row">Product category:</div>
+                        <select name="cars" id="cars">
+                            <option value="volvo">Hardcover</option>
+                            <option value="saab">Paperback</option>
+                            <option value="mercedes">Hardcover + Paperback</option>
+                        </select>
+                        <p><i class='bx bxs-shield-alt-2'></i>7-day free exchange/return policy</p>
+                    </div>
+                    <div class="col-3">
+                        <label for="quantity">Quantity:</label>
+                        <button class="btnTru">-</button><input type="text" id="quantity" name="quantity" value="1"
+                            min="1" max="10"><button class="btnCong">+</button>
+                    </div>
+                    <div class="price"> Price : 44,000 VND</div>
+
+
+                </div>
+            </div>
+            <div class="row border-top border-bottom">
+                <div class="row main align-items-center">
+                    <input type="checkbox" name="" id="checkbox">
+                    <div class="col-2"><img class="img-fluid" src="img/onggiavabienca.jpg"></div>
+                    <div class="col">
+                        <h2 class="title-book">THE OLD MAN AND THE SEA</h2>
+                        <div class="row">Product category:</div>
+                        <select name="cars" id="cars">
+                            <option value="volvo">Hardcover</option>
+                            <option value="saab">Paperback</option>
+                            <option value="mercedes">Hardcover + Paperback</option>
+                        </select>
+                        <p><i class='bx bxs-shield-alt-2'></i>7-day free exchange/return policy</p>
+                    </div>
+                    <div class="col-3">
+                        <label for="quantity">Quantity:</label>
+                        <button class="btnTru">-</button><input type="text" id="quantity" name="quantity" value="1"
+                            min="1" max="10"><button class="btnCong">+</button>
+                    </div>
+                    <div class="price"> Price : 315.000 VND</div>
+
+                </div>
+            </div>
+            <div class="row border-top border-bottom">
+                <div class="row main align-items-center">
+                    <input type="checkbox" name="" id="checkbox">
+                    <div class="col-2"><img class="img-fluid" src="img/caycamngotcuatoi.jpg"></div>
+                    <div class="col">
+                        <h2 class="title-book">MY SWEET ORANGE TREE</h2>
+                        <div class="row">Product category:</div>
+                        <select name="cars" id="cars">
+                            <option value="volvo">Hardcover</option>
+                            <option value="saab">Paperback</option>
+                            <option value="mercedes">Hardcover + Paperback</option>
+                        </select>
+                        <p><i class='bx bxs-shield-alt-2'></i>7-day free exchange/return policy</p>
+                    </div>
+                    <div class="col-3">
+                        <label for="quantity">Quantity:</label>
+                        <button class="btnTru">-</button><input type="text" id="quantity" name="quantity" value="1"
+                            min="1" max="10"><button class="btnCong">+</button>
+                    </div>
+                    <div class="price"> Price : 44,000 VND</div>
+
+                </div>
+            </div>
+
+            <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+        </div>
+        <div class="col-md-4 summary">
+            <h5>TOTAL PAYMENT</h5>
+            <hr>
+            <form>
+                <label class="Step1">Step 1: Enter buyer information</label>
+                <input type="text" placeholder="Full name">
+                <input type="text" placeholder="Phone number">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Address"><br>
+                <label class="Step2">Step 2: Select linked bank</label>
+            </form>
+            <!-- Create a grid with 4 columns and 2 rows -->
+            <div class="container-bank">
+                <div class="bank">
+                    <img src="img/klb.png">
+                </div>
+                <div class="bank">
+                    <img src="img/lotte.png">
+                </div>
+                <div class="bank">
+                    <img src="img/vcb.png">
+                </div>
+                <div class="bank">
+                    <img src="img/acb.png">
+                </div>
+                <div class="bank">
+                    <img src="img/scb.png">
+                </div>
+                <div class="bank">
+                    <img src="img/vcb.png">
+                </div>
+            </div>
+            <form>
+                <p>SHIPPING UNIT</p>
+                <select>
+                    <option value="volvo">Economy shipping</option>
+                    <option value="saab">Express shipping</option>
+                    <option value="mercedes">Economy shipping</option>
+                </select>
+                <p>DISCOUNT CODE</p>
+                <input id="code" placeholder="Enter your code">
+            </form>
+            <div class="total">
+                <h1>Total: 450,000VND</h1>
+
+            </div>
+
+
+            <div class="btn">
+                <a href="res.html">
+                    <button class="button-82-pushable" role="button"><span class="button-82-shadow"></span><span
+                            class="button-82-edge"></span><span class="button-82-front text">OK! PAY
+                            NOW</span></button></a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        hamburger = document.querySelector(".hamburger");
+        nav = document.querySelector("nav");
+        hamburger.onclick = function () {
+            nav.classList.toggle("active");
+        }
+
+        var btnTru = document.getElementsByClassName("btnTru");
+        var btnCong = document.getElementsByClassName("btnCong");
+        var quantity = document.getElementsByClassName("quantity");
+        for (var i = 0; i < btnTru.length; i++) {
+            btnTru[i].addEventListener("click", function () {
+                if (this.nextElementSibling.value > 1) {
+                    this.nextElementSibling.value--;
+                }
+            });
+            btnCong[i].addEventListener("click", function () {
+                this.previousElementSibling.value++;
+            });
+        }
+
+
+        function myFunction() {
+            var x = document.getElementById("code");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

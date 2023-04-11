@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="styleindex.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="product.css">
+    <style>
+        .cart-icon {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        .cart-icon i {
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            width: 300px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .cart-item img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .cart-item-name {
+            margin: 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .cart-item-price {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .cart-items.active {
+            display: block;
+        }
+
+        .cart-icon:hover .cart-items {
+            display: block;
+        }
+
+        .fa-shopping-cart {
+            font-size: 24px;
+            color: #d51717;
+            cursor: pointer;
+        }
+
+        .fa-shopping-cart:hover {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li class="active">
+                        <a href="login.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                    <li>
+                        <a href="">Store</a>
+                    </li>
+
+                </ul>
+                <div class="login-signup">
+                    <a href="">Login</a> or <a href="">Signup</a>
+                </div>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="login-signup">
+                <a href="">Login</a> or <a href="">Signup</a>
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <!-- Chi tiết sản phẩm sách-->
+        <div class="small-container single-product">
+
+
+            <div class="row">
+                <div class="col-2">
+                    <img src="img/hary.jpg" width="100%" id="ProductImg">
+                    <div class="rate-book">
+                        <label>Rate this book :</label>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+
+                    </div>
+                    <div class="small-img-row">
+                        <div class="small-img-col">
+                            <img src="img/hary2.jpg" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="img/hary3.jpg" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="img/hary4.jpg" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="img/hary.jpg" width="100%" class="small-img">
+                        </div>
+                    </div>
+                    <div class="icon-social">
+                        <label>Share:</label>
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="cart-icon">
+                        <i class="fa fa-shopping-cart"></i>
+
+                        <div class="cart-items">
+                            <h5>Sản phẩm đã thêm</h5>
+                            <div class="cart-item">
+                                <img src="img/hsp.png" alt="Product image">
+                                <div class="cart-item-details">
+                                    <p class="cart-item-name">Hai số phận</p>
+                                    <p class="cart-item-price">100.000đ</p>
+                                </div>
+                            </div>
+                            <div class="cart-item">
+                                <img src="img/cuontheochieugio.jpg" alt="Product image">
+                                <div class="cart-item-details">
+                                    <p class="cart-item-name">Cuốn theo chiều gió</p>
+                                    <p class="cart-item-price">250.000đ</p>
+                                </div>
+                            </div>
+
+                            <h4 class="cart-total">Tổng tiền: 350.000đ</h4>
+                            <div class="cart-item-count">
+                                <button class="btn btn-primary">Xem giỏ hàng</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <p>Home > Sách văn học > Truyện giả tưởng - Huyền bí - Phiêu lưu </p>
+
+                    <h1>Harry Potter và Hòn đá phù thủy (Tái Bản 2022)</h1>
+
+                    <div class="review">
+                    </div>
+                    <h4>472.000đ</h4>
+                    <label for="quantity">Loại bìa:</label>
+                    <select>
+                        <option>Bìa cứng</option>
+                        <option>Bìa mềm</option>
+                        <option>Bìa cứng + Bìa mềm</option>
+                        <option>Trọn bộ</option>
+                    </select>
+                    <label for="quantity">Số lượng:</label>
+                    <input type="number" value="1">
+                    <a href="cart.html">
+                        <button class="button-82-pushable" role="button">
+                            <span class="button-82-shadow"></span>
+                            <span class="button-82-edge"></span>
+                            <span class="button-82-front text">
+                                <i class='bx bx-cart-add'></i>
+                                Thêm vào giỏ hàng
+                            </span>
+                        </button>
+                    </a>
+
+                    <div class="detail">
+                        <h3>Chi tiết sản phẩm <i class="fa fa-indent"></i></h3>
+                        <!-- Thông tin tác giả, ngày xuất bảng, kích thước, số trang -->
+                        <div class="detail-content">
+                            <div class="detail-content-left">
+                                <p>Tác giả: J.K. Rowling</p>
+                                <p>Nhà xuất bản: Nhã Nam</p>
+                                <p>Ngày xuất bản: 01/01/2021</p>
+                                <p>Kích thước: 14 x 21 cm</p>
+                                <p>Số trang: 320</p>
+                            </div>
+
+                        </div>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+            </section>
+            <!-- end product details -->
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="scriptindex.js"></script>
+    <script>
+        hamburger = document.querySelector(".hamburger");
+        nav = document.querySelector("nav");
+        hamburger.onclick = function () {
+            nav.classList.toggle("active");
+        }
+
+        var ProductImg = document.getElementById("ProductImg");
+        var SmallImg = document.getElementsByClassName("small-img");
+        var detail = document.getElementById("detail");
+
+
+        SmallImg[0].onclick = function () {
+            ProductImg.src = SmallImg[0].src;
+        }
+        SmallImg[1].onclick = function () {
+            ProductImg.src = SmallImg[1].src;
+        }
+        SmallImg[2].onclick = function () {
+            ProductImg.src = SmallImg[2].src;
+        }
+        SmallImg[3].onclick = function () {
+            ProductImg.src = SmallImg[3].src;
+        }
+
+
+
+    </script>
+    <script>
+        // Select the cart icon and cart items
+        const cartIcon = document.querySelector('.cart-icon');
+        const cartItems = document.querySelector('.cart-items');
+
+        // Add an event listener to the cart icon
+        cartIcon.addEventListener('mouseenter', () => {
+            // Add the active class to the cart items to display them
+            cartItems.classList.add('active');
+        });
+
+        // Add an event listener to the cart items
+        cartItems.addEventListener('mouseleave', () => {
+            // Remove the active class from the cart items to hide them
+            cartItems.classList.remove('active');
+        });
+
+    </script>
+
+</body>
+
+</html>

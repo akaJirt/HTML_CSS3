@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <!-- thêm icon -->
+    <link rel="icon" href="https://img.icons8.com/ios/452/book.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="index.html">Store</a>
+        </nav>
+        <form action="#" class="seacrch-bar">
+            <input type="text" placeholder="Search">
+            <button type="submit"><i class='bx bx-search'></i></button>
+        </form>
+    </header>
+    <div class="background"></div>
+
+    <div class="container">
+        <div class="content">
+            <img src="img/logo.png" alt="">
+            <div class="text-content">
+                <h2 class="text-sci">Welcome<br><span>To our BOOKSTORE</span></h2>
+                <p>Chào mừng đến với trang web bán sách của chúng tôi! Tại đây, bạn có thể tìm thấy những cuốn sách mới
+                    nhất và phổ biến nhất, đáp ứng các nhu cầu đọc sách của mọi người. Chúng tôi cam kết cung cấp cho
+                    bạn trải nghiệm mua sắm dễ dàng và thuận tiện, cùng với những ưu đãi hấp dẫn và chính sách bảo hành
+                    đáng tin cậy. Hãy khám phá và lựa chọn cho mình những cuốn sách yêu thích nhất tại đây!</p>
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-facebook-square'></i></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="login-box">
+            <div class="form-box">
+                <form action="#">
+                    <h2>Sign in</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxl-gmail'></i></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bx-code-block'></i></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <div class="remember">
+                            <input type="checkbox" name="" id="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        <a href="#">Forgot password</a>
+                    </div>
+                    <button class="btn" type="submit">Sign In</button>
+                    <div class="signup">
+                        Don't have an account? <a href="#">Sign Up</a><br>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        
+    </div>
+    <script>
+        const loginBox = document.querySelector(".login-box");
+        const signupBox = document.querySelector(".signup-box");
+        const loginBtn = document.querySelector(".login-btn");
+        const signupBtn = document.querySelector(".signup-btn");
+        const signupLink = document.querySelector(".signup-link");
+        const loginLink = document.querySelector(".login-link");
+
+        loginBtn.onclick = () => {
+            signupBox.classList.remove("active");
+            loginBox.classList.add("active");
+        }
+        signupBtn.onclick = () => {
+            loginBox.classList.remove("active");
+            signupBox.classList.add("active");
+        }
+        signupLink.onclick = () => {
+            loginBox.classList.remove("active");
+            signupBox.classList.add("active");
+        }
+        loginLink.onclick = () => {
+            signupBox.classList.remove("active");
+            loginBox.classList.add("active");
+        }
+
+
+    </script>
+
+</body>
+
+
+</html>

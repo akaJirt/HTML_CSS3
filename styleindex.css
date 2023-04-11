@@ -1,0 +1,474 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "ubuntu";
+}
+
+img {
+    width: 100%;
+}
+
+.seacrch-bar {
+    margin-top: 20px;
+    width: 30%;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #090909;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: none;
+}
+
+.seacrch-bar input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #0b0b0b;
+    padding: 0 10px;
+}
+
+.seacrch-bar input::placeholder {
+    color: #111010;
+    padding-left: 20px;
+}
+
+header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    background: #24262b;
+}
+
+header .header-left {
+    display: flex;
+    align-items: center;
+}
+
+header .header-left .logo {
+    width: 140px;
+}
+
+header .header-left nav {
+    margin-left: 50px;
+}
+
+header .header-left nav ul {
+    display: flex;
+}
+
+nav ul li a {
+    color: #f9f5f5;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    position: relative;
+    /* transition: 0.5s; */
+    font-family: "Neue Frutiger World", Tahoma, sans-serif;
+    font-weight: 700;
+    transition: all 0.3s ease;
+
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #24262b;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #ba9e98;
+    padding-left: 20px;
+    
+}
+
+nav .login-signup {
+    display: none;
+}
+
+header .header-right {
+    display: flex;
+    align-items: center;
+}
+
+header .login-signup {
+    color: #cfd9e0;
+    font-weight: bold;
+}
+
+header .login-signup a {
+    display: inline-block;
+    color: #e6eaee;
+    background: #00b2cf;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-family: "Neue Frutiger World", Tahoma, sans-serif;
+    font-weight: 700;
+    
+}
+
+header .header-right .hamburger {
+    margin-left: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+header .header-right .hamburger div {
+    width: 30px;
+    height: 2px;
+    margin: 6px 0;
+    background: #fff;
+}
+
+@media only screen and (max-width: 1000px) {
+    header {
+        padding: 0 20px;
+    }
+
+    header .header-right .hamburger {
+        display: block;
+    }
+
+    header .header-left nav {
+        margin: 0;
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        background-color: #24262b;
+        padding: 30px;
+        transition: 0.6s;
+        text-align: left;
+        /* z-index: -1; */
+    }
+
+    header .header-left nav.active {
+        top: 70px;
+    }
+
+    header .header-left nav ul {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    nav .login-signup {
+        display: block;
+        margin-top: 20px;
+    }
+
+    header .header-right .login-signup {
+        display: none;
+    }
+}
+
+.section {
+    margin: 50px;
+}
+
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.book {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    flex-basis: calc(100%/6 - 20px);
+}
+
+.book:last-child {
+    margin-right: 0;
+}
+
+.book img {
+    max-width: 100%;
+    transition: 0.5s;
+}
+
+.book img:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.book h3 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.book p {
+    margin-bottom: 10px;
+}
+
+.book button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #24262b;
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+/* Responsive Styles */
+
+@media only screen and (max-width: 768px) {
+    .book {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .book {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+}
+
+/* < !-- HTML !--> */
+
+/* CSS */
+.button-49,
+.button-49:after {
+    width: 120px;
+    height: 30px;
+    line-height: 10px;
+    font-size: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    box-shadow: 6px 0px 0px #00E6F6;
+    outline: transparent;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-49:after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+
+    content: 'ALTERNATE TEXT';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+    text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+    clip-path: var(--slice-0);
+}
+
+.button-49:hover:after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+    0% {
+        clip-path: var(--slice-1);
+        transform: translate(-20px, -10px);
+    }
+
+    10% {
+        clip-path: var(--slice-3);
+        transform: translate(10px, 10px);
+    }
+
+    20% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 10px);
+    }
+
+    30% {
+        clip-path: var(--slice-3);
+        transform: translate(0px, 5px);
+    }
+
+    40% {
+        clip-path: var(--slice-2);
+        transform: translate(-5px, 0px);
+    }
+
+    50% {
+        clip-path: var(--slice-3);
+        transform: translate(5px, 0px);
+    }
+
+    60% {
+        clip-path: var(--slice-4);
+        transform: translate(5px, 10px);
+    }
+
+    70% {
+        clip-path: var(--slice-2);
+        transform: translate(-10px, 10px);
+    }
+
+    80% {
+        clip-path: var(--slice-5);
+        transform: translate(20px, -10px);
+    }
+
+    90% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 0px);
+    }
+
+    100% {
+        clip-path: var(--slice-1);
+        transform: translate(0);
+    }
+}
+
+@media (min-width: 768px) {
+
+    .button-49,
+    .button-49:after {
+        width: 120px;
+        height: 30px;
+        line-height: 18px;
+    }
+}
+
